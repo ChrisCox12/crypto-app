@@ -1,0 +1,38 @@
+
+
+.navlink {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 1rem 0.75rem;
+}
+
+.navlink[data-selected='true'] {
+    background-color: #c85a54;
+}
+
+.navlink a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.navlink a:hover {
+    color: #ff8a80;
+}
+
+.navlink[data-selected='true'] a:hover {
+    color: #001e19;
+}
+
+.footerLink {
+    color: #ff8a80;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footerLink:hover {
+    color: #ffbcaf;
+}
