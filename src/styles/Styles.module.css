@@ -1,10 +1,14 @@
-
+.layout {
+    display: flex;
+    height: 100vh;
+}
 
 .navlink {
     display: flex;
     align-items: center;
     color: white;
     padding: 1rem 0.75rem;
+    width: 100%;
 }
 
 .navlink[data-selected='true'] {
@@ -35,4 +39,100 @@
 
 .footerLink:hover {
     color: #ffbcaf;
+}
+
+.cryptoStat {
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+}
+
+.cryptolink a {
+    text-decoration: none;
+}
+
+.searchBar {
+    margin-bottom: 2rem;
+}
+
+.news-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    height: 100%;
+}
+
+.newslink {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    text-decoration: none;
+    color: #28453f;
+}
+
+.newslink:hover{
+    color: #ff8a80;
+}
+
+.newslink p {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.providerInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.providerInfo img {
+
+}
+
+.providerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.providerContainer p {
+    font-size: 0.9rem;
+}
+
+.statBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid gray;
+}
+
+.coin-stats-name,
+.other-stats-name {
+    display: flex;
+    gap: 1rem;
+}
+
+.stats {
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+}
+
+.coin-description p {
+    /* color: #001e19; */
+}
+
+.linksBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid gray;
+}
+
+.linksBlock a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #c85a54;
 }
