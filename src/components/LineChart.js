@@ -13,8 +13,11 @@ export default function LineChart({ coinHistory, currentPrice, coinName }) {
         //  Date constructor only accepts number in milliseconds but timestamp is in seconds, must mutliply by 1000
         //  to convert into date correctly; toLocaleDateString() is there to make the date more readable
         coinTimeStamp.push( new Date(coinHistory.data.history[i].timestamp * 1000).toLocaleDateString() );
+
+        //console.log( coinHistory.data.history[i].timestamp )
     }
 
+    //console.log(coinTimeStamp)
 
     //  data and options are there to configure the line chart
     const data = {

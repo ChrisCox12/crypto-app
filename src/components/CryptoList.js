@@ -17,7 +17,7 @@ export default function CryptoList({ simple }) {
     
     useEffect(() => {
         //  filter data by checking the sanitized (in this case, lowercase) input and name
-        const filteredData = (cryptoList?.data?.coins)?.filter(coin => coin.name.toLowerCase().includes(searchTerm.toLowerCase()));
+        const filteredData = (cryptoList?.data?.coins)?.filter(coin => (coin.name).toLowerCase().includes( searchTerm.toLowerCase() ));
 
         setCoins(filteredData);
     }, [searchTerm, cryptoList]);
@@ -64,7 +64,7 @@ export default function CryptoList({ simple }) {
                                     }}
                                 />
                                 <CardContent>
-                                    <Typography>Price: {millify(coin.price)}</Typography>
+                                    <Typography>Price: ${millify(coin.price)}</Typography>
                                     <Typography>Market Cap: {millify(coin.marketCap)}</Typography>
                                     <Typography>Daily Change: {millify(coin.change)}%</Typography>
                                 </CardContent>
