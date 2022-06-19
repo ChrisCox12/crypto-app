@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
-import NewsList from "../components/NewsList";
+import { Box } from '@mui/material';
+import NewsList from '../components/NewsList';
 
 
 export default function NewsPage() {

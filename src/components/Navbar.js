@@ -1,12 +1,13 @@
-import { Box, IconButton, Menu, MenuItem, Stack, Typography } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { Box, IconButton, Menu, MenuItem, Stack, Typography } from '@mui/material';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Styles.module.css';
-import { useState } from "react";
+
 
 
 export default function Navbar() {
@@ -23,11 +24,11 @@ export default function Navbar() {
         setAnchorEl(null);
     }
 
-    //console.log(location)
+    
     return (
         <Box className='navbar' bgcolor='primary.main'>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', padding: { xs: '1rem', md: '0' } }}>
-                <Typography component='h1' variant='h3' color='white' mb={{ md: '4rem' }}>Crypto Central</Typography>
+                <Typography component='h1' variant='h3' color='white' mb={{ md: '4rem' }} padding={{ md: '1rem' }}>Crypto Central</Typography>
                 
                 <IconButton onClick={handleOpen} sx={{ color: 'white', display: { md: 'none' } }}>
                     <MenuIcon />

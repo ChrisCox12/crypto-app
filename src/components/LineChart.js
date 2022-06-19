@@ -1,7 +1,9 @@
-import { Line } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; //   Chart.js 3 is tree-shakeable, so it necessary to import and register the controllers, 
                                    //   elements, scales, and plugins you're going to use
-import { Typography, Box } from "@mui/material";
+import { Typography } from '@mui/material';
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 
 export default function LineChart({ coinHistory, currentPrice, coinName }) {
@@ -13,11 +15,7 @@ export default function LineChart({ coinHistory, currentPrice, coinName }) {
         //  Date constructor only accepts number in milliseconds but timestamp is in seconds, must mutliply by 1000
         //  to convert into date correctly; toLocaleDateString() is there to make the date more readable
         coinTimeStamp.push( new Date(coinHistory.data.history[i].timestamp * 1000).toLocaleDateString() );
-
-        //console.log( coinHistory.data.history[i].timestamp )
     }
-
-    //console.log(coinTimeStamp)
 
     //  data and options are there to configure the line chart
     const data = {
@@ -27,8 +25,7 @@ export default function LineChart({ coinHistory, currentPrice, coinName }) {
                 label: 'Price in USD',
                 data: coinPrice,
                 fill: false,
-                backgroundColor: 'red',
-                borderColor: 'yellow'
+                borderColor: 'rgb(75, 192, 192)'
             }
         ]
     };
@@ -44,15 +41,23 @@ export default function LineChart({ coinHistory, currentPrice, coinName }) {
         }
     };
 
+
     return (
         <>
-            <Box className='chart-header'>
-                <Typography className='chart-title'>{coinName} Price Chart</Typography>
-                <Box className='price-container'>
-                    <Typography className='price-change'>{coinHistory?.data?.change}%</Typography>
-                    <Typography className='current-price'>Current {coinName} Price: $ {currentPrice}</Typography>
-                </Box>
-            </Box>
+            <div className='chart-header'>
+                <Typography className='chart-title' fontWeight={500}>{coinName} Price Chart</Typography>
+                <div className='price-container'>
+                    <div className='price-change' style={{ display: 'flex', gap: '0.3rem' }}>
+                        <span style={{ fontWeight: 500 }}>Price Change:</span>{' '}
+                        {coinHistory?.data?.change}%
+                        {coinHistory?.data?.change > 0 ? <ArrowCircleUpIcon sx={{ color: 'green' }} /> : <ArrowCircleDownIcon sx={{ color: 'red' }} />}
+                    </div>
+                    <div className='current-price'>
+                        <span style={{ fontWeight: 500 }}>Current {coinName} Price:</span>{' '}
+                        ${currentPrice}
+                    </div>
+                </div>
+            </div>
 
             <Line data={data} options={options} />
         </>

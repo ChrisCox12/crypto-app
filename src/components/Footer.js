@@ -1,9 +1,10 @@
-import { Box, Typography, Stack } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, Typography, Stack } from '@mui/material';
+import { Link } from 'react-router-dom';
 import styles from '../styles/Styles.module.css';
 
 
 export default function Footer() {
+    
     return (
         <Box bgcolor='primary.main' color='white' padding='1.5rem 0'>
             <Stack spacing={1} alignItems='center'>

@@ -1,9 +1,8 @@
-import { Typography, Grid, Card, CardContent, FormControl, Avatar, Select, MenuItem, InputLabel } from "@mui/material";
-import moment from "moment";
-import { useState } from "react";
-
-import { useGetNewsQuery } from "../services/cryptoNewsApi";
-import { useGetCoinsQuery } from "../services/cryptoApi";
+import { Typography, Grid, Card, CardContent, FormControl, Avatar, Select, MenuItem, InputLabel } from '@mui/material';
+import moment from 'moment';
+import { useState } from 'react';
+import { useGetNewsQuery } from '../redux/cryptoNewsApi';
+import { useGetCoinsQuery } from '../redux/cryptoApi';
 import styles from '../styles/Styles.module.css';
 
 
@@ -12,8 +11,7 @@ export default function NewsList({ simple }) {
     const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
     const { data: cryptoNews } = useGetNewsQuery({ newsCategory: newsCategory, count: simple ? 6 : 12 });
     const { data: cryptoCoins } = useGetCoinsQuery(100);
-    
-    //console.log(cryptoNews);
+
 
     if(!cryptoNews?.value) return <Typography>Loading...</Typography>;
 

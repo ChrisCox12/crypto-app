@@ -1,10 +1,12 @@
-import { Grid, Typography, Card, CardContent, CardHeader, Avatar, TextField, InputAdornment } from "@mui/material";
-import millify from "millify";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useGetCoinsQuery } from "../services/cryptoApi";
-import styles from '../styles/Styles.module.css';
+import { Grid, Typography, Card, CardContent, CardHeader, Avatar, TextField, InputAdornment } from '@mui/material';
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import SearchIcon from '@mui/icons-material/Search';
+import millify from 'millify';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useGetCoinsQuery } from '../redux/cryptoApi';
+import styles from '../styles/Styles.module.css';
 
 
 // simple acts as a way of checking whether we are on the Home page or the Cryptocurrencies page
@@ -24,8 +26,6 @@ export default function CryptoList({ simple }) {
 
 
     if(isFetching) return <Typography>Loading...</Typography>;
-
-    //console.log(count)
 
     return ( 
         <>
@@ -59,14 +59,24 @@ export default function CryptoList({ simple }) {
                                         flexDirection: 'row-reverse', 
                                         '.MuiTypography-root': { 
                                             fontSize: '1.1rem', 
-                                            fontWeight: 500 
+                                            fontWeight: 700 
                                         } 
                                     }}
                                 />
                                 <CardContent>
-                                    <Typography>Price: ${millify(coin.price)}</Typography>
-                                    <Typography>Market Cap: {millify(coin.marketCap)}</Typography>
-                                    <Typography>Daily Change: {millify(coin.change)}%</Typography>
+                                    <Typography>
+                                        <span style={{ fontWeight: 500 }}>Price:</span>{' '} 
+                                        ${millify(coin.price, { precision: 2 })}
+                                    </Typography>
+                                    <Typography>
+                                        <span style={{ fontWeight: 500 }}>Market Cap:</span>{' '} 
+                                        {millify(coin.marketCap)}
+                                    </Typography>
+                                    <div style={{ display: 'flex', gap: '0.25rem' }}>
+                                        <span style={{ fontWeight: 500 }}>Daily Change:</span>{' '} 
+                                        {millify(coin.change, { precision: 2 })}% 
+                                        {coin.change > 0 ? <ArrowCircleUpIcon sx={{ color: 'green' }} /> : <ArrowCircleDownIcon sx={{ color: 'red' }} />}
+                                    </div>
                                 </CardContent>
                             </Card>
                         </Link>

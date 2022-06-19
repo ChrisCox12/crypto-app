@@ -1,5 +1,6 @@
-import { Box } from "@mui/material";
-import CryptoList from "../components/CryptoList";
+import { Box } from '@mui/material';
+import CryptoList from '../components/CryptoList';
+
 
 export default function CryptocurrenciesPage() {
 

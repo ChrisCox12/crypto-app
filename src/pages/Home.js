@@ -1,17 +1,16 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import millify from "millify";
-import { useGetCoinsQuery } from "../services/cryptoApi";
+import { Box, Grid, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+import millify from 'millify';
+import { useGetCoinsQuery } from '../redux/cryptoApi';
+import CryptoList from '../components/CryptoList';
+import NewsList from '../components/NewsList';
 import styles from '../styles/Styles.module.css';
-import CryptoList from "../components/CryptoList";
-import NewsList from "../components/NewsList";
 
 
 export default function HomePage() {
     const { data, isFetching } = useGetCoinsQuery(10);
     const globalStats = data?.data?.stats;
 
-    //console.log(data)
 
     if(isFetching) return <Typography>Loading...</Typography>;
 
@@ -41,16 +40,18 @@ export default function HomePage() {
                 </Grid>
             </Grid>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem', marginBottom: '2rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem', marginBottom: '1rem' }}>
                 <Typography component='h2' variant='h5' fontWeight={600}>Top 10 Cryptocurrencies in the world</Typography>
                 <Link to='/cryptocurrencies' style={{ fontWeight: 600, fontSize: '1.125rem', textDecoration: 'none', color: '#001e19' }}>Show More</Link>
             </div>
+
             <CryptoList simple />
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem', marginBottom: '1rem' }}>
                 <Typography component='h2' variant='h5' fontWeight={600}>Latest Crypto News</Typography>
                 <Link to='/news' style={{ fontWeight: 600, fontSize: '1.125rem', textDecoration: 'none', color: '#001e19' }}>Show More</Link>
             </div>
+
             <NewsList simple />
         </Box>
     )

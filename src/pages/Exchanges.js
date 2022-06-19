@@ -1,10 +1,11 @@
 
 
 
-
-
 export default function ExchangesPage() {
     return (
-        <div>Exchanges page</div>
+        <div style={{ height: '100%', textAlign: 'center' }}>
+            <h1>Exchanges page</h1>
+            <h2>To be implmented</h2>
+        </div>
     )
 }

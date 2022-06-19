@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material';
 
 
 const theme = createTheme({
@@ -15,7 +15,7 @@ const theme = createTheme({
         }
     },
     typography: {
-
+        fontFamily: 'Roboto'
     }
 });
 

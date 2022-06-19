@@ -1,14 +1,12 @@
-
-//import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import HomePage from './pages/Home';
 import NewsPage from './pages/News';
 import CryptocurrenciesPage from './pages/Cryptocurrencies';
 import ExchangesPage from './pages/Exchanges';
-import theme from './styles/theme';
-import Layout from './components/Layout';
 import CryptoDetailsPage from './pages/CryptoDetails';
+import Layout from './components/Layout';
+import theme from './styles/theme';
 
 
 function App() {
