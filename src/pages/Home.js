@@ -40,7 +40,7 @@ export default function HomePage() {
                 </Grid>
             </Grid>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem', marginBottom: '1rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem', marginBottom: '1rem', gap: '1.5rem' }}>
                 <Typography component='h2' variant='h5' fontWeight={600}>Top 10 Cryptocurrencies in the world</Typography>
                 <Link to='/cryptocurrencies' style={{ fontWeight: 600, fontSize: '1.125rem', textDecoration: 'none', color: '#001e19' }}>Show More</Link>
             </div>

@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../styles/Styles.module.css';
 
 
-
 export default function Navbar() {
     const location = useLocation();
     const [anchorEl, setAnchorEl] = useState(null);

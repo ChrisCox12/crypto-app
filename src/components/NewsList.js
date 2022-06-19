@@ -17,7 +17,7 @@ export default function NewsList({ simple }) {
 
     return (
         <Grid className='news-cards-container' container spacing={2}>
-            {/* Only want to show the coin selector when on the news page */}
+            {/* Only want to show the coin selector when on the News page */}
             {!simple && (
                 <Grid item xs={12}>
                     <FormControl sx={{ width: '15rem' }}>
@@ -41,7 +41,7 @@ export default function NewsList({ simple }) {
 
             {cryptoNews?.value?.map((news, index) => (
                 <Grid className='news-card' item xs={12} sm={6} lg={4} key={index}>
-                    <Card sx={{ height: '100%' }}>
+                    <Card sx={{ height: '100%' }} elevation={3}>
                         <CardContent className={styles['news-card-content']}>
                             <a className={styles.newslink} href={news.url} target='_blank' rel='noreferrer'>
                                 <Typography>{news.name}</Typography>

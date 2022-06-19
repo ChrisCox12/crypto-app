@@ -51,7 +51,7 @@ export default function CryptoList({ simple }) {
                 {coins?.map(coin => (
                     <Grid className={`crypto-card ${styles.cryptolink}`} item xs={12} sm={6} lg={3} key={coin.uuid}>
                         <Link to={`/crypto/${coin.uuid}`}>
-                            <Card>
+                            <Card elevation={3}>
                                 <CardHeader 
                                     title={`${coin.rank}. ${coin.name}`} 
                                     avatar={<Avatar src={`${coin.iconUrl}`} />} 
@@ -75,7 +75,7 @@ export default function CryptoList({ simple }) {
                                     <div style={{ display: 'flex', gap: '0.25rem' }}>
                                         <span style={{ fontWeight: 500 }}>Daily Change:</span>{' '} 
                                         {millify(coin.change, { precision: 2 })}% 
-                                        {coin.change > 0 ? <ArrowCircleUpIcon sx={{ color: 'green' }} /> : <ArrowCircleDownIcon sx={{ color: 'red' }} />}
+                                        {coin.change >= 0 ? <ArrowCircleUpIcon sx={{ color: 'green' }} /> : <ArrowCircleDownIcon sx={{ color: 'red' }} />}
                                     </div>
                                 </CardContent>
                             </Card>

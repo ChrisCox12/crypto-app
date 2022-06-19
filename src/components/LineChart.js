@@ -50,7 +50,7 @@ export default function LineChart({ coinHistory, currentPrice, coinName }) {
                     <div className='price-change' style={{ display: 'flex', gap: '0.3rem' }}>
                         <span style={{ fontWeight: 500 }}>Price Change:</span>{' '}
                         {coinHistory?.data?.change}%
-                        {coinHistory?.data?.change > 0 ? <ArrowCircleUpIcon sx={{ color: 'green' }} /> : <ArrowCircleDownIcon sx={{ color: 'red' }} />}
+                        {coinHistory?.data?.change >= 0 ? <ArrowCircleUpIcon sx={{ color: 'green' }} /> : <ArrowCircleDownIcon sx={{ color: 'red' }} />}
                     </div>
                     <div className='current-price'>
                         <span style={{ fontWeight: 500 }}>Current {coinName} Price:</span>{' '}
