@@ -20,23 +20,23 @@ export default function HomePage() {
             <Grid className='stats-container' container spacing={2}>
                 <Grid item xs={6}>
                     <Typography>Total Cryptocurrencies</Typography>
-                    <Typography className={styles.cryptoStat}>{(globalStats.total).toLocaleString()}</Typography>
+                    <Typography className={styles.cryptoStat}>{(globalStats?.total).toLocaleString()}</Typography>
                 </Grid>
                 <Grid item xs={6}>
                     <Typography>Total Exchanges</Typography>
-                    <Typography className={styles.cryptoStat}>{millify(globalStats.totalExchanges)}</Typography>
+                    <Typography className={styles.cryptoStat}>{millify(globalStats?.totalExchanges)}</Typography>
                 </Grid>
                 <Grid item xs={6}>
                     <Typography>Total Market Cap</Typography>
-                    <Typography className={styles.cryptoStat}>{millify(globalStats.totalMarketCap)}</Typography>
+                    <Typography className={styles.cryptoStat}>{millify(globalStats?.totalMarketCap)}</Typography>
                 </Grid>
                 <Grid item xs={6}>
                     <Typography>Total 24hr Volume</Typography>
-                    <Typography className={styles.cryptoStat}>{millify(globalStats.total24hVolume)}</Typography>
+                    <Typography className={styles.cryptoStat}>{millify(globalStats?.total24hVolume)}</Typography>
                 </Grid>
                 <Grid item xs={6}>
                     <Typography>Total Markets</Typography>
-                    <Typography className={styles.cryptoStat}>{millify(globalStats.totalMarkets)}</Typography>
+                    <Typography className={styles.cryptoStat}>{millify(globalStats?.totalMarkets)}</Typography>
                 </Grid>
             </Grid>
 
