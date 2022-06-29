@@ -20,7 +20,7 @@ export default function HomePage() {
             <Grid className='stats-container' container spacing={2}>
                 <Grid item xs={6}>
                     <Typography>Total Cryptocurrencies</Typography>
-                    <Typography className={styles.cryptoStat}>{(globalStats?.total).toLocaleString()}</Typography>
+                    <Typography className={styles.cryptoStat}>{(globalStats?.total)?.toLocaleString()}</Typography>
                 </Grid>
                 <Grid item xs={6}>
                     <Typography>Total Exchanges</Typography>
