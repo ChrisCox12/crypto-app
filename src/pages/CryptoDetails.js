@@ -88,7 +88,7 @@ export default function CryptoDetailsPage() {
         <Grid className='coin-details-container' container padding='2.5rem'>
             <Grid className='coin-details-heading' item xs={12} mb='2rem' textAlign='center'>
                 <Typography fontWeight={700} fontSize='3rem' color='primary.light'>{coinDetails.name} ({coinDetails.symbol}) Price</Typography>
-                <Typography>{coinDetails.name} live price in US dollars ($). View value statistics, market capsm and supply.</Typography>
+                <Typography>{coinDetails.name} live price in US dollars ($). View value statistics, market caps and supply.</Typography>
             </Grid>
             
             <Grid className='coin-details-select' item xs={12} mb='2.5rem'>
