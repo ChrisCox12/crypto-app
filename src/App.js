@@ -19,7 +19,9 @@ function App() {
                       <Route index element={<HomePage />} />
                       <Route path='home' element={<HomePage />} />
                       <Route path='news' element={<NewsPage />} />
-                      <Route path='exchanges' element={<ExchangesPage />} />
+                      {/*   TO BE IMPLMENTED LATER
+                            <Route path='exchanges' element={<ExchangesPage />} /> 
+                      */}
                       <Route path='cryptocurrencies' element={<CryptocurrenciesPage />} />
                       <Route path='crypto/:coinId' element={<CryptoDetailsPage />} />
                   </Route>

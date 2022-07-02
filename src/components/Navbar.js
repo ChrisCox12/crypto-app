@@ -65,12 +65,14 @@ export default function Navbar() {
                             <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
                         </div>
                     </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <div className={styles.navlink} data-selected={location.pathname === '/exchanges'}>
-                            <CurrencyExchangeIcon fontSize='large' />
-                            <Link to='/exchanges'>Exchanges</Link>
-                        </div>
-                    </MenuItem>
+                    {/*  TO BE IMPLMENTED LATER
+                        <MenuItem onClick={handleClose}>
+                            <div className={styles.navlink} data-selected={location.pathname === '/exchanges'}>
+                                <CurrencyExchangeIcon fontSize='large' />
+                                <Link to='/exchanges'>Exchanges</Link>
+                            </div>
+                        </MenuItem> 
+                    */}
                     <MenuItem onClick={handleClose}>
                         <div className={styles.navlink} data-selected={location.pathname === '/news'}>
                             <NewspaperRoundedIcon fontSize='large' />
@@ -89,10 +91,12 @@ export default function Navbar() {
                     <CurrencyBitcoinIcon fontSize='large' />
                     <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
                 </div>
-                <div className={styles.navlink} data-selected={location.pathname === '/exchanges'}>
-                    <CurrencyExchangeIcon fontSize='large' />
-                    <Link to='/exchanges'>Exchanges</Link>
-                </div>
+                {/* TO BE IMPLMENTED LATER
+                    <div className={styles.navlink} data-selected={location.pathname === '/exchanges'}>
+                        <CurrencyExchangeIcon fontSize='large' />
+                        <Link to='/exchanges'>Exchanges</Link>
+                    </div>
+                 */}
                 <div className={styles.navlink} data-selected={location.pathname === '/news'}>
                     <NewspaperRoundedIcon fontSize='large' />
                     <Link to='/news'>News</Link>
